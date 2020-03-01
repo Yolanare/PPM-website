@@ -1,4 +1,4 @@
-
+// VARIABLES
 var nav = document.getElementById("navigation");
 var navlarge_ppm = document.getElementById("navlarge_ppm");
 var show_btn = document.getElementById("mobile_open_close_btn");
@@ -25,7 +25,7 @@ window.onscroll = function () {
     }
 }
 
-// MENU QUI SE DÉROULE QD ON CLIQUE SUR LE BOUTON ET QUI SE RENROULE AUSSI
+// MENU QUI SE DEROULE QD ON CLIQUE SUR LE BOUTON ET QUI SE RENROULE AUSSI
 nav_show = function () {
     if (show_btn.getAttribute("roulemapoule") == "0") {
 
@@ -56,13 +56,14 @@ nav_show = function () {
 }
 
 
-
-
-
-
-
-
-
+// EASTER EGG : SKORPIONNAN
+function egg_skorpio(){
+    window.addEventListener('click', function (evt) {
+        if (evt.detail === 2) {
+            document.querySelector('#audio_skorpio').play(); 
+        }
+    });
+}
 
 
 
