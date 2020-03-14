@@ -1,8 +1,8 @@
 // VARIABLES
-var nav = document.getElementById("navigation");
-var navlarge_ppm = document.getElementById("navlarge_ppm");
-var show_btn = document.getElementById("mobile_open_close_btn");
-var dark = document.getElementById("mobile_nav_dark_bg");
+var nav = document.querySelector("#navigation");
+var navlarge_ppm = document.querySelector("#navlarge_ppm");
+var show_btn = document.querySelector("#mobile_open_close_btn");
+var dark = document.querySelector("#mobile_nav_dark_bg");
 
 
 // QD ON SCROLL, LA BARRE DU HAUT DISPARAIT, WAOUH
@@ -58,7 +58,7 @@ nav_show = function () {
 
 // EASTER EGG : SKORPIONNAN
 function egg_skorpio(){
-    window.addEventListener('click', function (evt) {
+    document.querySelector("#skorpio").addEventListener('click', function (evt) {
         if (evt.detail === 2) {
             document.querySelector('#audio_skorpio').play(); 
         }
