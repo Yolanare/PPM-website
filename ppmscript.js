@@ -5,10 +5,10 @@ var show_btn = document.querySelector("#mobile_open_close_btn");
 var dark = document.querySelector("#mobile_nav_dark_bg");
 
 
-// QD ON SCROLL, LA BARRE DU HAUT DISPARAIT, WAOUH
-// Taken from somewhere in the web, don't remember exactly where but thanks
+// -- MOBILE
+// MENU - Auto-hide navigation bar
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
+window.onscroll = function() {
     if (window.innerWidth < 900) {
         var currentScrollPos = window.pageYOffset;
         if (show_btn.getAttribute("roulemapoule") == "0") {
@@ -25,8 +25,8 @@ window.onscroll = function () {
     }
 }
 
-// MENU QUI SE DEROULE QD ON CLIQUE SUR LE BOUTON ET QUI SE RENROULE AUSSI
-nav_show = function () {
+// MENU - Folding navigation
+nav_show = function() {
     if (show_btn.getAttribute("roulemapoule") == "0") {
 
         show_btn.setAttribute("roulemapoule", "1");
@@ -56,7 +56,8 @@ nav_show = function () {
 }
 
 
-// EASTER EGG : SKORPIONNAN
+// -- CUSTOM PAGES
+// MEMBRES - EASTER EGG : SKORPIONNAN
 function egg_skorpio(){
     document.querySelector("#skorpio").addEventListener('click', function (evt) {
         if (evt.detail === 2) {

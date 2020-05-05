@@ -11,271 +11,265 @@
     <link rel="stylesheet" href="ppmstyle.css">
 
     <style type="text/css">
-        
-:root {
-    --mbre_fiches_size: 220px;
-}
+
+        :root {
+            --mbre_fiches_size: 220px;
+        }
 
 
-.profile_pic, .roles > div {
-	-moz-user-select: none;
-    user-select: none;
-}
+        .profile_pic, .roles > div {
+            -moz-user-select: none;
+            user-select: none;
+        }
 
 
-/*Fiches membres*/
-.fiches_membres {
-    margin-top: 15%;
-    margin-bottom: 15%;
-    position: relative;
-    width: 100%;
-}
-.fiches_membres > #fiches_c {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    user-select: none;
-}
+        /* FICHES MEMBRES */
+        .fiches_membres {
+            margin-top: 15%;
+            margin-bottom: 15%;
+            position: relative;
+            width: 100%;
+        }
+        .fiches_membres > #fiches_c {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            user-select: none;
+        }
 
 
-.p_fiche {
-    width: var(--mbre_fiches_size);
-    height: var(--mbre_fiches_size);
-    transform: rotate(0.0001deg);
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-bottom: 40px;
-    border-radius: 25px;
-    /*color: rgba(255, 255, 255, 0.85);*/
-    background-color: var(--bg);
-    box-shadow: 0px 10px 15px 0px rgba(255, 56, 117, 0.2);
-    transition: 1.5s cubic-bezier(0.5, 0, 0, 1),
-        transform 0.9s cubic-bezier(0.5, 0, 0, 1),
-        box-shadow 0.9s cubic-bezier(0.5, 0, 0, 1);
-    overflow: hidden;
-    user-select: text;
-    cursor: pointer;
-}
+        .p_fiche {
+            width: var(--mbre_fiches_size);
+            height: var(--mbre_fiches_size);
+            transform: rotate(0.0001deg);
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-bottom: 40px;
+            border-radius: 25px;
+            /*color: rgba(255, 255, 255, 0.85);*/
+            background-color: var(--bg);
+            box-shadow: 0px 10px 15px 0px rgba(255, 56, 117, 0.2);
+            transition: 1.5s cubic-bezier(0.5, 0, 0, 1),
+                transform 0.9s cubic-bezier(0.5, 0, 0, 1),
+                box-shadow 0.9s cubic-bezier(0.5, 0, 0, 1);
+            overflow: hidden;
+            user-select: text;
+            cursor: pointer;
+        }
 
-.p_fiche > div {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-}
-.first, .second {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-}
-.profile_pic {
-    display: flex;
-    justify-content: center;
-}
-.profile_pic>img {
-    position: absolute;
-    top: 15%;
-    width: 45%;
-    height: 45%;
-    border-radius: 9999px;
-    transition: 0.8s 0.1s cubic-bezier(0.5, 0, 0, 1);
-}
+        .p_fiche > div {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        .first, .second {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        .profile_pic {
+            display: flex;
+            justify-content: center;
+        }
+        .profile_pic>img {
+            position: absolute;
+            top: 15%;
+            width: 45%;
+            height: 45%;
+            border-radius: 9999px;
+            transition: 0.8s 0.1s cubic-bezier(0.5, 0, 0, 1);
+        }
 
-.name {
-    position: static;
-    margin-top: 72.5%;
-    width: 100%;
-    font-size: 24px;
-    text-align: center;
-    opacity: 1;
-    transition: 1.1s cubic-bezier(0.65, 0, 0, 1);
-}
-.desc {
-    position: relative;
-    height: -moz-fit-content;
-    height: fit-content;
-    margin-top: 45px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    transition: 1.2s cubic-bezier(0.65, 0, 0, 1);
-}
-.info {
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;*/
-    margin-top: 15px;
-    transition: 1.2s 0.5s cubic-bezier(0.65, 0, 0, 1);
-}
+        .name {
+            position: static;
+            margin-top: 72.5%;
+            width: 100%;
+            font-size: 24px;
+            text-align: center;
+            opacity: 1;
+            transition: 1.1s cubic-bezier(0.65, 0, 0, 1);
+        }
+        .desc {
+            position: relative;
+            height: -moz-fit-content;
+            height: fit-content;
+            margin-top: 45px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0;
+            transition: 1.2s cubic-bezier(0.65, 0, 0, 1);
+        }
+        .info {
+            margin-top: 15px;
+            transition: 1.2s 0.5s cubic-bezier(0.65, 0, 0, 1);
+        }
 
-    /* ROLES */
-.roles {
-	-moz-user-select: none;
-    user-select: none;
-}
-.roles > div {
-    display: inline-block;
-    margin-right: 2px;
-    margin-left: 2px;
-    margin-bottom: 5px;
-    padding: 2px 7px;
-    border: 2px solid;
-    border-radius: 9999px;
-    font-size: 13px;
-    letter-spacing: 0.25px;
-}
+            /* ROLES */
+        .roles {
+            -moz-user-select: none;
+            user-select: none;
+        }
+        .roles > div {
+            display: inline-block;
+            margin-right: 2px;
+            margin-left: 2px;
+            margin-bottom: 5px;
+            padding: 2px 7px;
+            border: 2px solid;
+            border-radius: 9999px;
+            font-size: 13px;
+            letter-spacing: 0.25px;
+        }
 
-:root {
-    --resp-color: #f9293a;
-    --builder-color: #1c9d4f;
-    --dev-color: #dfa207;
-    --vid-color: #5578e9;
-    --infogr-color: #f556df;
-}
+        :root {
+            --resp-color: #f9293a;
+            --builder-color: #1c9d4f;
+            --dev-color: #dfa207;
+            --vid-color: #5578e9;
+            --infogr-color: #f556df;
+        }
 
-#resp {
-    border-color: var(--resp-color);
-    color: var(--resp-color)
-}
-#builder {
-    border-color: var(--builder-color);
-    color: var(--builder-color)
-}
-#dev {
-    border-color: var(--dev-color);
-    color: var(--dev-color)
-}
-#vid {
-    border-color: var(--vid-color);
-    color: var(--vid-color)
-}
-#infogr {
-    border-color: var(--infogr-color);
-    color: var(--infogr-color)
-}
+        #resp {
+            border-color: var(--resp-color);
+            color: var(--resp-color)
+        }
+        #builder {
+            border-color: var(--builder-color);
+            color: var(--builder-color)
+        }
+        #dev {
+            border-color: var(--dev-color);
+            color: var(--dev-color)
+        }
+        #vid {
+            border-color: var(--vid-color);
+            color: var(--vid-color)
+        }
+        #infogr {
+            border-color: var(--infogr-color);
+            color: var(--infogr-color)
+        }
 
-        /* FICHES MEMBRES TR */
-.p_fiche:hover {
-    transform: translateY(-7.5px) rotate(0.0001deg);
-    background-color: #fbf8f9;
-    box-shadow: 0px 17.5px 17.5px 0px rgba(255, 56, 117, 0.15);
-    transition: 1.5s cubic-bezier(0.1, 0.05, 0, 1),
-        transform 0.3s cubic-bezier(0.35, 0, 0, 1),
-        box-shadow 0.3s cubic-bezier(0.35, 0, 0, 1);
-}
-.p_fiche:active {
-    box-shadow: 0px 5px 10px 0px rgba(255, 56, 117, 0.25);
-    transition: 0.15s cubic-bezier(0.25, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);
-}
+                /* FICHES MEMBRES TR */
+        .p_fiche:hover {
+            transform: translateY(-7.5px) rotate(0.0001deg);
+            background-color: #fbf8f9;
+            box-shadow: 0px 17.5px 17.5px 0px rgba(255, 56, 117, 0.15);
+            transition: 1.5s cubic-bezier(0.1, 0.05, 0, 1),
+                transform 0.3s cubic-bezier(0.35, 0, 0, 1),
+                box-shadow 0.3s cubic-bezier(0.35, 0, 0, 1);
+        }
+        .p_fiche:active {
+            box-shadow: 0px 5px 10px 0px rgba(255, 56, 117, 0.25);
+            transition: 0.15s cubic-bezier(0.25, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);
+        }
 
-.p_fiche:hover .profile_pic>img {
-    transform: scale(0.9);
-    opacity: 0;
-    transition: 0.5s 0.5s cubic-bezier(0.5, 0, 0, 1);
-}
+        .p_fiche:hover .profile_pic>img {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: 0.5s 0.5s cubic-bezier(0.5, 0, 0, 1);
+        }
 
-.p_fiche:hover .name {
-    margin-top: 8.5%;
-    opacity: 1;
-    color: var(--accent-fruit);
-    transition: 0.8s 0.5s cubic-bezier(0.5, 0, 0, 1);
-}
-.p_fiche:hover .desc {
-    margin-top: 12.5px;
-    opacity: 1;
-    transition: 0.9s 0.5s cubic-bezier(0.65, 0, 0, 1);
-}
-.p_fiche:hover .desc .info {
-    margin-top: 5px;
-}
+        .p_fiche:hover .name {
+            margin-top: 8.5%;
+            opacity: 1;
+            color: var(--accent-fruit);
+            transition: 0.8s 0.5s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .p_fiche:hover .desc {
+            margin-top: 12.5px;
+            opacity: 1;
+            transition: 0.9s 0.5s cubic-bezier(0.65, 0, 0, 1);
+        }
+        .p_fiche:hover .desc .info {
+            margin-top: 5px;
+        }
 
 
-/* INTRO */
-#fiches {
-    display: flex;
-    justify-content: center;
-    max-width: 67%;
-}
+        /* POEM */
+        #fiches {
+            display: flex;
+            justify-content: center;
+            max-width: 67%;
+        }
 
-#mbre_poem > div {
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    text-align: right;
-    line-height: 1.45;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 5%;
-}
+        #mbre_poem > div {
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            text-align: right;
+            line-height: 1.45;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-right: 5%;
+        }
 
 
-@media (max-width: 1160px) /*TABLET*/ {
-    :root {
-        --mbre_fiches_size: 200px;
-    }
+        @media (max-width: 1160px) /*TABLET*/ {
+            :root {
+                --mbre_fiches_size: 200px;
+            }
 
-#fiches {
-    display: block;
-    max-width: 100%;
-}
+        #fiches {
+            display: block;
+            max-width: 100%;
+        }
 
-#mbre_poem {
-    position: relative;
-    width: 100%;
-}
-#mbre_poem > div {
-    font-size: 18px;
-    text-align: center;
-    position: absolute;
-    top: unset;
-    transform: none;
-    margin: 2.5%;
-    margin-bottom: 30%;
-}
-   
-.p_fiche {
-    margin-right: 17.5px;
-    margin-left: 17.5px;
-    margin-bottom: 35px;
-}
+        #mbre_poem {
+            position: relative;
+            width: 100%;
+        }
+        #mbre_poem > div {
+            font-size: 18px;
+            text-align: center;
+            position: absolute;
+            top: unset;
+            transform: none;
+            margin: 2.5%;
+            margin-bottom: 30%;
+        }
 
-.name {
-    font-size: 22px;
-}
-.roles > div {
-    margin-right: 1px;
-    margin-left: 1px;
-    padding: 2px 5px;
-    font-size: 11px;
-}
-.desc {
-    font-size: 13px;
-}
+        .p_fiche {
+            margin-right: 17.5px;
+            margin-left: 17.5px;
+            margin-bottom: 35px;
+        }
 
-}
+        .name {
+            font-size: 22px;
+        }
+        .roles > div {
+            margin-right: 1px;
+            margin-left: 1px;
+            padding: 2px 5px;
+            font-size: 11px;
+        }
+        .desc {
+            font-size: 13px;
+        }
+        }
 
-@media (max-width: 900px) /*MOBILE*/ {
-    :root {
-        --mbre_fiches_size: 190px;
-    }
-    
-.p_fiche {
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 30px;
-}
-.roles > div {
-    margin-right: 1px;
-    margin-left: 1px;
-    margin-bottom: 3px;
-    padding: 1px 5px;
-    font-size: 11px;
-}
-
-}
+        @media (max-width: 900px) /*MOBILE*/ {
+            :root {
+                --mbre_fiches_size: 190px;
+            }
+            
+        .p_fiche {
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 30px;
+        }
+        .roles > div {
+            margin-right: 1px;
+            margin-left: 1px;
+            margin-bottom: 3px;
+            padding: 1px 5px;
+            font-size: 11px;
+        }
+        }
 
 
 
@@ -302,7 +296,8 @@
             <img id="ppm" src="tex/ppmnavlarge.png" />
         </div>
     </nav>
-
+    
+    <!-- CONTENT -->
     <div id="content">
         <div id="fiches">
             <div class="fiches_membres">
@@ -499,10 +494,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="ppmscript.js">
-
-    </script>
-
+    <script type="text/javascript" src="ppmscript.js"></script>
 </body>
 </html>
 
