@@ -3,19 +3,19 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="theme-color" content="#ff3875" />
     <meta name="msapplication-navbutton-color" content="#ff3875" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Nos Projets - Pamplemousse</title>
+    <title>Nos Membres - Pamplemousse</title>
     <link rel="stylesheet" href="ppmstyle.css">
 
     <style type="text/css">
-
         :root {
             --mbre_fiches_size: 220px;
+            --poem_bg_opacity: 0.8;
         }
-
 
         .profile_pic, .roles > div {
             -moz-user-select: none;
@@ -37,7 +37,6 @@
             user-select: none;
         }
 
-
         .p_fiche {
             width: var(--mbre_fiches_size);
             height: var(--mbre_fiches_size);
@@ -45,7 +44,7 @@
             margin-right: 20px;
             margin-left: 20px;
             margin-bottom: 40px;
-            border-radius: 25px;
+            border-radius: 22.5px;
             /*color: rgba(255, 255, 255, 0.85);*/
             background-color: var(--bg);
             box-shadow: 0px 10px 15px 0px rgba(255, 56, 117, 0.2);
@@ -53,7 +52,7 @@
                 transform 0.9s cubic-bezier(0.5, 0, 0, 1),
                 box-shadow 0.9s cubic-bezier(0.5, 0, 0, 1);
             overflow: hidden;
-            user-select: text;
+            user-select: none;
             cursor: pointer;
         }
 
@@ -160,7 +159,7 @@
             box-shadow: 0px 17.5px 17.5px 0px rgba(255, 56, 117, 0.15);
             transition: 1.5s cubic-bezier(0.1, 0.05, 0, 1),
                 transform 0.3s cubic-bezier(0.35, 0, 0, 1),
-                box-shadow 0.3s cubic-bezier(0.35, 0, 0, 1);
+                box-shadow 0.2s linear;
         }
         .p_fiche:active {
             box-shadow: 0px 5px 10px 0px rgba(255, 56, 117, 0.25);
@@ -170,7 +169,7 @@
         .p_fiche:hover .profile_pic>img {
             transform: scale(0.9);
             opacity: 0;
-            transition: 0.5s 0.5s cubic-bezier(0.5, 0, 0, 1);
+            transition: opacity 0.5s 0.5s cubic-bezier(0.5, 0, 0, 1), transform 0.5s 0.5s;
         }
 
         .p_fiche:hover .name {
@@ -193,109 +192,166 @@
         #fiches {
             display: flex;
             justify-content: center;
-            max-width: 67%;
+            max-width: 62.5%;
         }
 
-        #mbre_poem > div {
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            text-align: right;
-            line-height: 1.45;
+        #poem_bg {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            margin-right: 5%;
+            width: 100%;
+            height: 140%;
+            border-radius: 9999px;
+            opacity: var(--poem_bg_opacity);
+            background: linear-gradient(90deg, var(--accent-fruit), transparent);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0, 1);
+        }
+
+        #poem_txt {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 27.5%;
+            margin-right: 3%;
+            margin-left: 15px;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            text-align: right;
+            line-height: 2;
+            opacity: 0.75;
+            color: rgb(250,250,250);
+            transition: opacity 1.2s cubic-bezier(0.1, 0.2, 0, 1);
+        }
+
+        #poem_bg:hover {
+            opacity: calc(var(--poem_bg_opacity) - 0.15);
+            transition: opacity 0.6s cubic-bezier(0.3, 0.2, 0, 1);
+        }
+        #poem_bg:hover #poem_txt, #poem_txt:hover {
+            opacity: 1;
+            transition: opacity 0.7s cubic-bezier(0.3, 0.2, 0, 1);
         }
 
 
+        /* SCREENS */
         @media (max-width: 1160px) /*TABLET*/ {
             :root {
                 --mbre_fiches_size: 200px;
             }
 
-        #fiches {
-            display: block;
-            max-width: 100%;
-        }
+            #fiches {
+                display: block;
+                max-width: 100%;
+            }
 
-        #mbre_poem {
-            position: relative;
-            width: 100%;
-        }
-        #mbre_poem > div {
-            font-size: 18px;
-            text-align: center;
-            position: absolute;
-            top: unset;
-            transform: none;
-            margin: 2.5%;
-            margin-bottom: 30%;
-        }
+            .fiches_membres {
+                margin-bottom: 10%;
+            }
 
-        .p_fiche {
-            margin-right: 17.5px;
-            margin-left: 17.5px;
-            margin-bottom: 35px;
-        }
+            #mbre_poem {
+                position: relative;
+                width: 100%;
+            }
+            #poem_bg {
+                position: relative;
+                background: none;
+                transform: none;
+            }
+            #poem_txt {
+                position: relative;
+                top: 0;
+                width: 100%;
+                margin-bottom: 5%;
+                margin-right: 0;
+                margin-left: 0;
+                font-size: 12px;
+                text-align: center;
+                transform: none;
+                opacity: 1;
+                color: rgba(0,0,0,0.5)
+            }
 
-        .name {
-            font-size: 22px;
-        }
-        .roles > div {
-            margin-right: 1px;
-            margin-left: 1px;
-            padding: 2px 5px;
-            font-size: 11px;
-        }
-        .desc {
-            font-size: 13px;
-        }
+            .p_fiche {
+                margin-right: 17.5px;
+                margin-left: 17.5px;
+                margin-bottom: 35px;
+            }
+
+            .name {
+                font-size: 22px;
+            }
+            .roles > div {
+                margin-right: 1px;
+                margin-left: 1px;
+                padding: 2px 5px;
+                font-size: 11px;
+            }
+            .desc {
+                font-size: 13px;
+            }
         }
 
         @media (max-width: 900px) /*MOBILE*/ {
             :root {
-                --mbre_fiches_size: 190px;
+                --mbre_fiches_size: 150px;
             }
             
-        .p_fiche {
-            margin-right: 15px;
-            margin-left: 15px;
-            margin-bottom: 30px;
-        }
-        .roles > div {
-            margin-right: 1px;
-            margin-left: 1px;
-            margin-bottom: 3px;
-            padding: 1px 5px;
-            font-size: 11px;
-        }
-        }
+            .p_fiche {
+                margin-right: 8px;
+                margin-left: 8px;
+                margin-bottom: 30px;
+            }
+            .roles > div {
+                margin-right: 1px;
+                margin-left: 1px;
+                margin-bottom: 3px;
+                padding: 1px 5px;
+                font-size: 11px;
+            }
 
-
-
+            .name {
+                font-size: 19px;
+            }
+            .roles > div {
+                margin-right: 1px;
+                margin-left: 1px;
+                padding: 2px 5px;
+                font-size: 10px;
+            }
+            .desc {
+                padding-right: 5px;
+                padding-left: 5px;
+                font-size: 13px;
+            }
+            .p_fiche:hover .desc {
+                margin-top: 5px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="mobile_nav_dark_bg" onclick="nav_show()" style="opacity: 0;"></div>
-    <nav id="navigation">
-        <div id="navtop_ppm">
-            <a href="home.html"></a>
-            <img id="ppm" src="tex/ppm300.png" />
-        </div>
-        <div id="menu">
-            <div class="menu_btn">
-                <!--<a class="mbtns" id="mbtn-home" href="home.html">Accueil</a>-->
-                <a class="mbtns" id="mbtn-projets" href="projets.html">Nos Projets</a>
-                <a class="mbtns current" id="mbtn-membres" href="membres.html">Nos Membres</a>
-                <a class="mbtns" id="mbtn-commande" href="commande.html">Prendre Commande</a>
-                <a class="mbtns" id="mbtn-contact" href="contact.html">Nous Contacter</a>
+    <!-- NAVIGATION -->
+    <div id="navigation">
+        <div id="mobile_nav_dark_bg" onclick="nav_show()" style="opacity: 0;"></div>
+        <nav>
+            <div id="navtop_ppm">
+                <a href="home.html"></a>
+                <img id="ppm" src="src/ppm300.png" />
             </div>
-        </div>
-        <div id="mobile_open_close_btn" onclick="nav_show()" roulemapoule="0"></div>
-        <div id="navlarge_ppm">
-            <img id="ppm" src="tex/ppmnavlarge.png" />
-        </div>
-    </nav>
+            <div id="menu">
+                <div class="menu_btn">
+                    <!--<a class="mbtns" id="mbtn-home" href="home.html">Accueil</a>-->
+                    <a class="mbtns" id="mbtn-projets" href="projets.html">Nos Projets</a>
+                    <a class="mbtns current" id="mbtn-membres" href="membres.html">Nos Membres</a>
+                    <a class="mbtns" id="mbtn-contact" href="contact.html">Nous Contacter</a>
+                </div>
+            </div>
+            <div id="mobile_open_close_btn" onclick="nav_show()" roulemapoule="0"></div>
+            <div id="navlarge_ppm">
+                <img id="ppm" src="src/ppmnavlarge.png" />
+            </div>
+        </nav>
+    </div>
     
     <!-- CONTENT -->
     <div id="content">
@@ -306,7 +362,7 @@
                     <div class="p_fiche" id="browlin">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_browlin.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_browlin.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Browlin</div>
@@ -323,7 +379,7 @@
                     <div class="p_fiche" id="nija">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_nija.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_nija.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Nija</div>
@@ -338,10 +394,10 @@
                         </div>
                     </div>
                     <div class="p_fiche" id="skorpio" onclick="egg_skorpio()">
-                        <audio id="audio_skorpio" src="snd/skorpionman.mp3"><!-- Voice of Aurélien Sama --></audio>
+                        <audio id="audio_skorpio" src="src/sounds/skorpionman.mp3"><!-- Voice of Aurélien Sama --></audio>
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_skorpionnan.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_skorpionnan.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Skorpionnan</div>
@@ -359,7 +415,7 @@
                     <div class="p_fiche" id="asstron">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_asstron.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_asstron.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Asstron</div>
@@ -367,7 +423,7 @@
                                     <div class="roles">
                                         <div id="builder">Builder</div>
                                     </div>
-                                    <div class="info">Acteur pour adultes à temps plein,<br>suce des manchots<br>et léo lui doit 50 balles.</div>
+                                    <div class="info">Acteur pour adultes à temps plein et léo lui doit 50 balles.</div>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +431,7 @@
                     <div class="p_fiche" id="pablo">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_pablo.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_pablo.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Pablo</div>
@@ -383,7 +439,7 @@
                                     <div class="roles">
                                         <div id="builder">Builder</div>
                                     </div>
-                                    <div class="info">Inactif, personne ne sait pourquoi il est là.</div>
+                                    <div class="info">Inactif.<br>Qui sait pourquoi il est là très franchement ?</div>
                                 </div>
                             </div>
                         </div>
@@ -391,7 +447,7 @@
                     <div class="p_fiche" id="seifer">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_seifer.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_seifer.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Seifer</div>
@@ -408,7 +464,7 @@
                     <div class="p_fiche" id="arken">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_arken.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_arken.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Arken</div>
@@ -424,7 +480,7 @@
                     <div class="p_fiche" id="leod1">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_leod1.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_leod1.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Leod1</div>
@@ -440,7 +496,7 @@
                     <div class="p_fiche" id="Yohann">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_yohann.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_yohann.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Yohann</div>
@@ -448,7 +504,7 @@
                                     <div class="roles">
                                         <div id="dev">Développeur</div>
                                     </div>
-                                    <div class="info">"Si debugger, c’est supprimer des bugs, alors programmer ne peut être que d'en ajouter."</div>
+                                    <div class="info">"Si debugger, c’est supprimer des bugs, alors programmer c'est d'en ajouter."</div>
                                 </div>
                             </div>
                         </div>
@@ -457,7 +513,7 @@
                     <div class="p_fiche" id="caloucath">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_caloucath.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_caloucath.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Caloucath</div>
@@ -473,7 +529,7 @@
                     <div class="p_fiche" id="yolan">
                         <div>
                             <div class="first">
-                                <div class="profile_pic"><img src="tex/fiches_membres/profile_yolan.jpg" /></div>
+                                <div class="profile_pic"><img src="src/fiches_membres/profile_yolan.jpg" /></div>
                             </div>
                             <div class="second">
                                 <div class="name">Yolan'</div>
@@ -489,12 +545,31 @@
                 </div>
             </div>
             <div id="mbre_poem">
-                <div>Juteux comme la braise.<br>Voici les noms de ceux qui donnent leur coeur à l'effervescence du fruit tropical.<br>En brandissant le nom de la Pamplemousse à travers le monde, leurs actes écrivent l'histoire! </div>
+                <div id="poem_bg">
+                    <div id="poem_txt">
+                        <span style="font-family: 'Trebuchet MS';"><i>Juteuse comme la braise,<br>L'effervescence du fruit tropical n'en est que plus belle.<br><br>Par la cohésion de ses élements<br>Elle permet au fruit des forces créatives<br>De réduire à néant les feux de tout les maux,<br>Et de libérer le monde de son désarroi.<br><br>Elle éveille le brasier de la pureté.</i></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script type="text/javascript" src="ppmscript.js"></script>
+    <script type="text/javascript">
+        // EASTER EGG : SKORPIONNAN
+        function egg_skorpio(){
+            document.querySelector("#skorpio").addEventListener('click', function (evt) {
+                if (evt.detail === 2) {
+                    document.querySelector('#audio_skorpio').play(); 
+                }
+            });
+        }
+
+        // MBRE POEM BG OPACITY BY SCROLL
+        window.onscroll = function() {
+            document.documentElement.style.setProperty('--poem_bg_opacity', (0.8 + (0.2 * (currentScrollPosPercent() / 100))) );
+        }
+    </script>
 </body>
 </html>
 

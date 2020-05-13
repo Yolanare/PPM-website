@@ -1,8 +1,18 @@
 // VARIABLES
-var nav = document.querySelector("#navigation");
+var nav = document.querySelector("nav");
 var navlarge_ppm = document.querySelector("#navlarge_ppm");
 var show_btn = document.querySelector("#mobile_open_close_btn");
 var dark = document.querySelector("#mobile_nav_dark_bg");
+
+
+// MISC
+var currentScrollPosPercent = function getScrollPercent() { // https://stackoverflow.com/a/8028584
+    var h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+}
 
 
 // -- MOBILE
@@ -25,10 +35,11 @@ window.onscroll = function() {
     }
 }
 
+
 // MENU - Folding navigation
 nav_show = function() {
     if (show_btn.getAttribute("roulemapoule") == "0") {
-
+        document.querySelector("body").style.overflow = "hidden";
         show_btn.setAttribute("roulemapoule", "1");
         navlarge_ppm.style.opacity = "1";
 
@@ -41,6 +52,7 @@ nav_show = function() {
         dark.style.pointerEvents = "auto";
     }
     else {
+        document.querySelector("body").style.overflow = "auto";
 
         show_btn.setAttribute("roulemapoule", "0");
         navlarge_ppm.style.opacity = "0.35";
@@ -54,18 +66,6 @@ nav_show = function() {
         dark.style.pointerEvents = "none";
     }
 }
-
-
-// -- CUSTOM PAGES
-// MEMBRES - EASTER EGG : SKORPIONNAN
-function egg_skorpio(){
-    document.querySelector("#skorpio").addEventListener('click', function (evt) {
-        if (evt.detail === 2) {
-            document.querySelector('#audio_skorpio').play(); 
-        }
-    });
-}
-
 
 
 
