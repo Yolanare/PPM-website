@@ -8,6 +8,7 @@
     <meta name="msapplication-navbutton-color" content="#ff3875" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Nos Membres - Pamplemousse</title>
     <link rel="stylesheet" href="ppmstyle.css">
 
@@ -213,9 +214,9 @@
             transform: translateY(-50%);
             width: 27.5%;
             margin-right: 3%;
-            margin-left: 15px;
+            margin-left: 20px;
             font-size: 17px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             text-align: right;
             line-height: 2;
             opacity: 0.75;
@@ -236,7 +237,7 @@
         /* SCREENS */
         @media (max-width: 1160px) /*TABLET*/ {
             :root {
-                --mbre_fiches_size: 200px;
+                --mbre_fiches_size: 165px;
             }
 
             #fiches {
@@ -336,7 +337,7 @@
         <nav>
             <div id="navtop_ppm">
                 <a href="home.html"></a>
-                <img id="ppm" src="src/ppm300.png" />
+                <img src="src/ppm300.png" />
             </div>
             <div id="menu">
                 <div class="menu_btn">
@@ -567,7 +568,7 @@
 
         // MBRE POEM BG OPACITY BY SCROLL
         window.onscroll = function() {
-            document.documentElement.style.setProperty('--poem_bg_opacity', (0.8 + (0.2 * (currentScrollPosPercent() / 100))) );
+            document.documentElement.style.setProperty('--poem_bg_opacity', (0.8 + (0.2 * (currentScrollPosPercent()))) );
         }
     </script>
 </body>
