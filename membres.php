@@ -1,17 +1,11 @@
-﻿<!DOCTYPE html>
+<?php $page = "membres"; ?>
+<!DOCTYPE html>
 
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta name="theme-color" content="#ff3875" />
-    <meta name="msapplication-navbutton-color" content="#ff3875" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Nos Membres - Pamplemousse</title>
-    <link rel="stylesheet" href="ppmstyle.css">
-
+    
+    <?php include 'includes/head.php'; ?>
     <style type="text/css">
         :root {
             --mbre_fiches_size: 220px;
@@ -332,27 +326,7 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <div id="navigation">
-        <div id="mobile_nav_dark_bg" onclick="nav_show()" style="opacity: 0;"></div>
-        <nav>
-            <div id="navtop_ppm">
-                <a href="home.html"></a>
-                <img src="src/ppm300.png" />
-            </div>
-            <div id="menu">
-                <div class="menu_btn">
-                    <!--<a class="mbtns" id="mbtn-home" href="home.html">Accueil</a>-->
-                    <a class="mbtns" id="mbtn-projets" href="projets.html">Nos Projets</a>
-                    <a class="mbtns current" id="mbtn-membres" href="membres.html">Nos Membres</a>
-                    <a class="mbtns" id="mbtn-contact" href="contact.html">Nous Contacter</a>
-                </div>
-            </div>
-            <div id="mobile_open_close_btn" onclick="nav_show()" roulemapoule="0"></div>
-            <div id="navlarge_ppm">
-                <img id="ppm" src="src/ppmnavlarge.png" />
-            </div>
-        </nav>
-    </div>
+    <?php include 'includes/nav.php'; ?>
     
     <!-- CONTENT -->
     <div id="content">
@@ -555,6 +529,7 @@
         </div>
     </div>
 
+
     <script type="text/javascript" src="ppmscript.js"></script>
     <script type="text/javascript">
         // EASTER EGG : SKORPIONNAN
@@ -573,5 +548,3 @@
     </script>
 </body>
 </html>
-
-
