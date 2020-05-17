@@ -25,6 +25,10 @@ On a pas grand chose d'autre à dire.</p>
 ### AH OUI ET AUSSI!
 <p>Vous pouvez nous suivre sur Twitter: https://twitter.com/PamplemousseBT<br>
 Et nous rejoindre sur Discord: https://discord.gg/c2KMJpt</p>
+
+<p>Si vous voulez nous donner des conseils pour nous aider ou en savoir plus, on vous attend sur les deux résaux cités juste au-dessus!<br>
+<i>On est preneur de toute forme de sagesse!</i></p>
+<br>
 <br>
 <p><i>Voilà c'est mieux comme ça pas vrai?</i><br>
 Sur ce, à bientôt!</p>
