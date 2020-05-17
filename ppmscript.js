@@ -35,6 +35,7 @@ if (window.innerWidth > 901) {
     }
 
     // navlarge_ppm
+    navlarge_ppm.style.transition = "none";
     navlarge_ppm.classList.add("navlarge_ppm_focus");
     setTimeout(function () {
         navlarge_ppm.style.transition = "1s cubic-bezier(0.5, 0, 0, 1)";
