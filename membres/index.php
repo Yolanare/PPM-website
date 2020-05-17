@@ -458,9 +458,9 @@
     <script type="text/javascript">
         // EASTER EGG : SKORPIONNAN
         function egg_skorpio(){
-            document.querySelector("#skorpio").addEventListener('click', function (evt) {
-                if (evt.detail === 2) {
-                    document.querySelector('#audio_skorpio').play(); 
+            document.querySelector("#Skorpionnan").addEventListener('click', function (event) {
+                if (event.detail === 2) {
+                    document.querySelector('#audio_skorpio').play();
                 }
             });
         }

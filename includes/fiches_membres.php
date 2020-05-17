@@ -75,10 +75,10 @@ $mbreList = array(
         "pic" => "yolan",
     )
 );
-
 foreach($mbreList as $mbre) {
-echo '<div class="fiche" id="'.$mbre["name"].'">
-    <div>
+echo'<div class="fiche" id="'.$mbre["name"].'" '.(($mbre==$mbreSkorpionnan)?'onclick="egg_skorpio()"':"").'>';
+    if($mbre==$mbreSkorpionnan){echo'<audio id="audio_skorpio" src="../src/sounds/skorpionman.mp3"><!-- Voice of Aurélien Sama --></audio>';}
+    echo'<div>
         <div class="first">
             <div class="profile_pic"><img src="../src/fiches_membres/profile_'.$mbre["pic"].'.jpg" /></div>
         </div>
@@ -87,12 +87,11 @@ echo '<div class="fiche" id="'.$mbre["name"].'">
             <div class="desc">
                 <div class="roles">';
                 if(array_key_exists('role_resp',$mbre)){if($mbre["role_resp"]=="resp"){echo'<div id="resp">Responsable</div>';}}
-                if($mbre["role"]=="resp"){echo'<div id="resp">Responsable</div>';}
                 if($mbre["role"]=="builder"){echo'<div id="builder">Builder</div>';}
                 if($mbre["role"]=="dev"){echo'<div id="dev">Développeur</div>';}
                 if($mbre["role"]=="vid"){echo'<div id="vid">Réal° Vidéo</div>';}
                 if($mbre["role"]=="infogr"){echo'<div id="infogr">Infographiste</div>';}
-                echo '</div>
+                echo'</div>
                 <div class="info">'.$mbre["desc"].'</div>
             </div>
         </div>
