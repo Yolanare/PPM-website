@@ -77,7 +77,6 @@ $mbreList = array(
 );
 
 foreach($mbreList as $mbre) {
-
 echo '<div class="fiche" id="'.$mbre["name"].'">
     <div>
         <div class="first">
@@ -99,6 +98,6 @@ echo '<div class="fiche" id="'.$mbre["name"].'">
         </div>
     </div>
 </div>';
-
 }
+
 ?>
