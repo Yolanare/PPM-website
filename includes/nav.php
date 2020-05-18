@@ -8,7 +8,7 @@
         <div id="menu">
             <div class="menu_btn">
                 <a class="mbtns <?php if($page=="projets"){echo"current";} ?>" id="mbtn-projets" onclick="nav_focus()" href="<?php if($page!="accueil"){echo"../";} ?>projets/">Nos Projets</a>
-                <a class="mbtns <?php if($page=="membres"){echo"current";} ?>" id="mbtn-membres" onclick="nav_focus()" href="<?php if($page!="accueil"){echo"../";} ?>membres/">Nos Membres</a>
+                <a class="mbtns <?php if($page=="membres"){echo"current";} ?>" id="mbtn-membres" onclick="nav_focus()" href="<?php if($page!="accueil"){echo"../";} ?>membres/">Qui sommes-nous</a>
                 <a class="mbtns <?php if($page=="contact"){echo"current";} ?>" id="mbtn-contact" onclick="nav_focus()" href="<?php if($page!="accueil"){echo"../";} ?>contact/">Nous Contacter</a>
             </div>
         </div>
