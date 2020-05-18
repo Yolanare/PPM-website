@@ -238,9 +238,8 @@
                 font-style: italic;
                 letter-spacing: 1px;
                 text-align: right;
-                opacity: 0.75;
-                color: rgb(250,250,250);
-                transition: opacity 1.2s cubic-bezier(0.1, 0.2, 0, 1);
+                color: rgba(250,250,250,0.75);
+                transition: color 1.2s cubic-bezier(0.1, 0.2, 0, 1);
             }
 
             #poem_bg:hover {
@@ -248,8 +247,8 @@
                 transition: opacity 0.6s cubic-bezier(0.3, 0.2, 0, 1);
             }
             #poem_bg:hover #poem_txt, #poem_txt:hover {
-                opacity: 1;
-                transition: opacity 0.7s cubic-bezier(0.3, 0.2, 0, 1);
+                color: rgba(250,250,250,1);
+                transition: color 0.7s cubic-bezier(0.3, 0.2, 0, 1);
             }
         }
 
