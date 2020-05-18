@@ -20,7 +20,7 @@ content : 10
 }
 
 ::selection {
-    color: var(--bg);
+    color: var(--bg-active);
     background: var(--accent-fruit);
 }
 
