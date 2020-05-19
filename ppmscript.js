@@ -1,11 +1,11 @@
 // VARIABLES
 var nav = document.querySelector("nav");
 var nav_menu = document.querySelector("#menu");
+var nav_current = document.querySelector(".current");
 var nav_logo = document.querySelector("#navtop_ppm");
 var navlarge_ppm = document.querySelector("#navlarge_ppm");
 var nav_show_btn = document.querySelector("#mobile_open_close_btn");
 var nav_darkbg = document.querySelector("#mobile_nav_dark_bg");
-var nav_current = document.querySelector(".current");
 
 // MISC
 var currentScrollPosPercent = function getScrollPercent() {
