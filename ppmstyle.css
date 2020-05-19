@@ -67,6 +67,11 @@ nav {
         --nav-width: 255px;
     }
 }
+@media (min-width: 2775px) {
+    :root {
+        --nav-width: 500px;
+    }
+}
 /* MENU BUTTONS */
 #menu {
     z-index: 105 !important;
