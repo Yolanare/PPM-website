@@ -1,4 +1,4 @@
-<?php $page = "contact"; $path = $_SERVER['DOCUMENT_ROOT']."/PPM-website/"; ?>
+<?php $page = "contact"; $path = dirname(dirname(__FILE__))."/"; ?>
 <!DOCTYPE html>
 
 <html>

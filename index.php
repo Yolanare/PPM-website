@@ -1,4 +1,4 @@
-<?php $page = "accueil"; $path = $_SERVER['DOCUMENT_ROOT']."/PPM-website/"; ?>
+<?php $page = "home"; $path = dirname(__FILE__)."/"; ?>
 <!DOCTYPE html>
 
 <html>
