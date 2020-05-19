@@ -3,7 +3,7 @@
     <nav>
         <div id="navtop_ppm">
             <a onclick="nav_focus()" href="<?php if($page!="accueil"){echo "../";} ?>"></a>
-            <img src="<?php if($page!="accueil"){echo "../";} ?>src/ppm300.png" />
+            <img src="<?php if($page!="accueil"){echo "../";} ?>src/PPM/ppm300.png" />
         </div>
         <div id="menu">
             <div class="menu_btn">
@@ -14,7 +14,7 @@
         </div>
         <div id="mobile_open_close_btn" onclick="nav_show()" roulemapoule="0"></div>
         <div id="navlarge_ppm">
-            <img src="<?php if($page!="accueil"){echo "../";} ?>src/ppmnavlarge.png" />
+            <img src="<?php if($page!="accueil"){echo "../";} ?>src/PPM/ppmnavlarge.png" />
         </div>
     </nav>
 </div>
