@@ -17,7 +17,8 @@ On va esayer de faire des trucs assez originaux pour chaque pages. On va aussi m
 ## Qui sont les responsables de ce truc ?
 <p>Fait avec amour par Yolan', <i>la mascotte infographiste de l'équipe.</i><br>
 Avec l'aide attentionée de Leod1, <i>car plus on est de fous, plus on rit n'est-ce-pas?</i></p>
-
+<p>Avec le support psychologique des autres membres de l'équipe aussi. <i>Faut pas les oublier non plus!</i></i></p>
+<br>
 <p>Et puis bah c'est tout...<br>
 On a pas grand chose d'autre à dire.</p>
 <br>
