@@ -248,8 +248,8 @@
                 opacity: calc(var(--poem_bg_opacity) - 0.15);
                 transition: opacity 0.6s cubic-bezier(0.3, 0.2, 0, 1);
             }
-            #poem_bg:hover #poem_txt, #poem_txt:hover {
-                color: rgba(250,250,250,1);
+            #poem_bg:hover #poem_txt {
+                color: rgba(250,250,250,0.95);
                 transition: color 0.7s cubic-bezier(0.3, 0.2, 0, 1);
             }
         }
