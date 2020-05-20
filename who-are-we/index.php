@@ -192,15 +192,15 @@
         #fiches {
             display: flex;
             justify-content: center;
-            max-width: 62.5%;
+            max-width: var(--mfiches_w);
         }
 
         #poem_bg {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 100%;
-            height: 140%;
+            width: var(--content_w);
+            height: 130%;
             border-radius: 9999px;
             opacity: var(--poem_bg_opacity);
             background: linear-gradient(90deg, var(--accent-fruit), transparent);
@@ -223,18 +223,20 @@
         }
 
         @media (min-width: 1311px) /*PC*/ {
+            :root {
+                --mfiches_w: 62.5%;
+            }
             .fiche:hover .desc .info {
                 margin-top: 8.5px;
             }
 
             #poem_txt {
                 position: fixed;
-                width: 37.5%; /*27.5 + 10*/
+                width: calc(100% - var(--mfiches_w));
                 height: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: end;
-                padding-right: 10%; /*^ +10*/
+                justify-content: center;
                 font-size: 16px;
                 font-style: italic;
                 letter-spacing: 1px;
