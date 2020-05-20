@@ -282,7 +282,7 @@
                     border-color 0.5s 0.4s linear;
             }
             .fiche:hover, .fiche:active {
-                border-color: var(--accent-mesocarp);
+                border-color: var(--accent-fruit);
                 box-shadow: 0px 5px 10px 0px rgba(255, 56, 117, 0);
                 transition: 1.5s ease,
                     background-color 0.4s linear,
