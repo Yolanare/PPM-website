@@ -212,16 +212,6 @@
             line-height: 2;
         }
 
-        #poem_txt span:nth-child(1) {
-            padding-left: 25px;
-        }
-        #poem_txt span:nth-child(2) {
-            padding-left: 5px;
-        }
-        #poem_txt span:nth-child(3) {
-            padding-left: 28px;
-        }
-
         @media (min-width: 1311px) /*PC*/ {
             :root {
                 --mfiches_w: 62.5%;
@@ -237,13 +227,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 16px;
+                font-size: 17px;
                 font-style: italic;
-                letter-spacing: 1px;
+                letter-spacing: 1.25px;
                 text-align: right;
                 color: rgba(250,250,250,0.75);
                 transition: color 1.2s cubic-bezier(0.1, 0.2, 0, 1);
             }
+            /*#poem_txt span:nth-child(1) {
+                padding-left: 25px;
+            }
+            #poem_txt span:nth-child(2) {
+                padding-left: 5px;
+            }
+            #poem_txt span:nth-child(3) {
+                padding-left: 28px;
+            }*/
 
             #poem_bg:hover {
                 opacity: calc(var(--poem_bg_opacity) - 0.15);
@@ -474,6 +473,7 @@
             }
         }
         document.addEventListener("scroll", PoemBgScroll);
+        PoemBgScroll(); // check at start (sometimes page doesn't load at the top)
     </script>
 </body>
 </html>
