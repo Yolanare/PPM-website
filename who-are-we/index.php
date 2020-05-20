@@ -181,9 +181,6 @@
             opacity: 1;
             transition: 0.9s 0.5s cubic-bezier(0.65, 0, 0, 1);
         }
-        .fiche:hover .desc .info {
-            margin-top: 8.5px;
-        }
 
         .fiche_shadow {
             position: absolute;
@@ -226,6 +223,10 @@
         }
 
         @media (min-width: 1311px) /*PC*/ {
+            .fiche:hover .desc .info {
+                margin-top: 8.5px;
+            }
+
             #poem_txt {
                 position: fixed;
                 width: 37.5%; /*27.5 + 10*/
