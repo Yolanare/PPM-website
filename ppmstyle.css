@@ -337,12 +337,11 @@ nav:hover #navtop_ppm {
     transition: color 0.5s cubic-bezier(0.3, 0.4, 0, 1),
         background-color 1s cubic-bezier(0.2, 0.5, 0, 1);
     transition-delay: 75ms;
-    will-change: color, background-color;
     user-select: none;
 }
 .btn1_tr a:hover {
     background-color: var(--accent-fruit) !important;
-    transition: 0.7s cubic-bezier(0.1, 0.6, 0, 1);
+    transition: 1s cubic-bezier(0.1, 0.6, 0, 1);
     transition-delay: 25ms;
 }
 .btn1_tr a:active {
@@ -355,15 +354,14 @@ nav:hover #navtop_ppm {
     transform: scale(1.0001);
     transition: transform 0.9s cubic-bezier(0.1, 0.4, 0, 1);
     transition-delay: 75ms;
-    will-change: transform;
 }
 .btn1_tr a:hover > div {
     transform: scale(0.95);
-    transition: transform 0.85s cubic-bezier(0, 0.6, 0, 1);
+    transition: transform 0.8s cubic-bezier(0, 0.6, 0, 1);
     transition-delay: 25ms;
 }
 .btn1_tr a:active > div {
-    transform: scale(1) !important;
+    transform: scale(1);
     transition: transform 0.2s cubic-bezier(0, 0.7, 0, 1);
 }
 
