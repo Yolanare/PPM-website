@@ -16,5 +16,8 @@
         <div id="navlarge_ppm">
             <img src="<?php if($page!="home"){echo "../";} ?>src/PPM/ppmnavlarge.png" />
         </div>
+        <div id="nav_copyright">
+            © Copyright BesTTeamEver (temporary name) • <?php echo date("Y"); ?>
+        </div>
     </nav>
 </div>

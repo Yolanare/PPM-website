@@ -8,14 +8,17 @@ content : 10
 :root {
     /*COLORS*/
     --accent-fruit: #ff3875;
-    --accent-fruit-active: #f36d95;
+    --accent-fruit-active-d: #ff1c66;
+    --accent-fruit-active-l: #ff769d;
     --accent-mesocarp: #f8edc3;
+    --accent-mesocarp-active: #FFDD84;
     --bg: #f6eeef;
     --bg-active: #fbf8f9;
     --nav-bg: #221c1e;
     
-    /*NUM*/
+    /*VAL*/
     --nav-width: 18%;
+    --content_w: calc(100% - var(--nav-width))
 
 }
 
@@ -176,8 +179,23 @@ nav:hover #navtop_ppm {
     height: 106%;
 }
 
+#nav_copyright {
+    z-index: 110 !important;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    letter-spacing: 0.5px;
+    text-align: center;
+    user-select: none;
+}
 
 @media (min-width: 901px) /*PC*/ {
+    #nav_copyright {
+        bottom: 3.5%;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.15);
+    }
+
     #mobile_open_close_btn {
         display: none;
     }
@@ -215,6 +233,12 @@ nav:hover #navtop_ppm {
     @keyframes mobile_navtop_ppm_spawn {
         0% { top: 0%; transform: rotate(-500deg); }
         100% { top: 20%; transform: rotate(0.0001deg); /*AA*/ }
+    }
+
+    #nav_copyright {
+        top: 2.5%;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.1);
     }
 
     #mobile_open_close_btn {
@@ -292,17 +316,55 @@ nav:hover #navtop_ppm {
     10% { opacity: 0; }
     100% { opacity: 1; }
 }
-#content {
+#content > div {
     animation: content_spawn 1.5s cubic-bezier(0.35, 0.1, 0, 1);
+    overflow: hidden;
 }
 
 #content {
     z-index: 10;
-    position: absolute;
-    width: calc(100% - var(--nav-width));
-    /*height: 100%;*/
+    width: var(--content_w);
     margin-left: var(--nav-width);
-    /*padding: 2.5%; 40px*/
+    overflow: hidden;
+}
+
+
+/*/ CUSTOM STYLES /*/
+/* BUTTONS */
+/* BTN1 */
+.btn1_tr a {
+    text-decoration: none;
+    transition: color 0.5s cubic-bezier(0.3, 0.4, 0, 1),
+        background-color 1s cubic-bezier(0.2, 0.5, 0, 1);
+    transition-delay: 75ms;
+    will-change: color, background-color;
+    user-select: none;
+}
+.btn1_tr a:hover {
+    background-color: var(--accent-fruit) !important;
+    transition: 0.7s cubic-bezier(0.1, 0.6, 0, 1);
+    transition-delay: 25ms;
+}
+.btn1_tr a:active {
+    background-color: var(--accent-fruit-active-d) !important;
+    transition: 0.2s ease;
+}
+
+.btn1_tr a > div {
+    display: inline-block;
+    transform: scale(1.0001);
+    transition: transform 0.9s cubic-bezier(0.1, 0.4, 0, 1);
+    transition-delay: 75ms;
+    will-change: transform;
+}
+.btn1_tr a:hover > div {
+    transform: scale(0.95);
+    transition: transform 0.85s cubic-bezier(0, 0.6, 0, 1);
+    transition-delay: 25ms;
+}
+.btn1_tr a:active > div {
+    transform: scale(1) !important;
+    transition: transform 0.2s cubic-bezier(0, 0.7, 0, 1);
 }
 
 

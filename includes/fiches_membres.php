@@ -7,72 +7,72 @@ $mbreList = array(
         "desc" => "<i>L'important c'est l'essentiel et ça c'est le principal!</i>",
         "role" => "builder",
         "role_resp" => "resp",
-        "pic" => "browlin",
+        "pic" => "browlin"
     ),
     $mbreNija = array(
         "name" => "Nija",
         "desc" => "<i><strong>Gruiiii !</strong></i>",
         "role" => "builder",
         "role_resp" => "resp",
-        "pic" => "nija",
+        "pic" => "nija"
     ),
     $mbreSkorpionnan = array(
         "name" => "Skorpionnan",
         "desc" => "<strong>Pseudo à écorcher.</strong>",
         "role" => "builder",
         "role_resp" => "resp",
-        "pic" => "skorpio",
+        "pic" => "skorpio"
     ),
     // Builder
     $mbreAsstron = array(
         "name" => "Asstron",
         "desc" => "Acteur porno pour adultes à temps plein et léo lui doit 50 balles.",
         "role" => "builder",
-        "pic" => "asstron",
+        "pic" => "asstron"
     ),
     $mbrePablo = array(
         "name" => "Pablo",
         "desc" => "Inactif.<br>Qui sait pourquoi il est là très franchement ?",
         "role" => "builder",
-        "pic" => "pablo",
+        "pic" => "pablo"
     ),
     $mbreSeifer = array(
         "name" => "Seifer",
         "desc" => "<i>L'Intelligence Artificielle n'a aucune chance face à la Stupidité Naturelle!</i>",
         "role" => "builder",
-        "pic" => "seifer",
+        "pic" => "seifer"
     ),
     // Dev
     $mbreArken = array(
         "name" => "Arken",
         "desc" => "<strong>Java > World</strong>",
         "role" => "dev",
-        "pic" => "arken",
+        "pic" => "arken"
     ),
     $mbreLeod1 = array(
         "name" => "Leod1",
         "desc" => "Relire ou recopier c'est inutile, tant que ça marche c'est bon!",
         "role" => "dev",
-        "pic" => "leod1",
+        "pic" => "leod1"
     ),
     $mbreYohann = array(
         "name" => "Yohann",
         "desc" => "Si debugger, c’est supprimer des bugs, alors programmer c'est d'en ajouter.",
         "role" => "dev",
-        "pic" => "yohann",
+        "pic" => "yohann"
     ),
     // Misc
     $mbreCaloucath = array(
         "name" => "Caloucath",
         "desc" => "<i>Makes movies but loves Minecraft</i>",
         "role" => "vid",
-        "pic" => "caloucath",
+        "pic" => "caloucath"
     ),
     $mbreYolan = array(
         "name" => "Yolan'",
         "desc" => "Mascotte de l'équipe.<br>N'apparaît que quand il y a du profit à se faire.",
         "role" => "infogr",
-        "pic" => "yolan",
+        "pic" => "yolan"
     )
 );
 foreach($mbreList as $mbre) {
