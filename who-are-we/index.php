@@ -84,6 +84,7 @@
             font-size: 24px;
             text-align: center;
             opacity: 1;
+            color: var(--txt-prim);
             transform: rotateY(0.0001deg); /*AA*/
             transition: 1.1s cubic-bezier(0.65, 0, 0, 1);
         }
@@ -101,6 +102,7 @@
         }
         .desc .info {
             margin-top: 45px;
+            color: var(--txt-prim);
             transition: 1.2s 0.3s;
             transform: rotateY(0.0001deg); /*AA*/
         }
