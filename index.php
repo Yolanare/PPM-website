@@ -43,7 +43,7 @@
             color: var(--txt-prim);
         }
         #welcome_txt {
-            margin-top: 8px;
+            margin-top: 5px;
             margin-left: 3px;
             font-size: 35px;
             color: var(--txt-prim);
@@ -117,22 +117,18 @@
             justify-content: center;
             align-items: center;
         }
-        #ppm_slideshow > div:nth-child(1) {
+        #ppm_slideshow_div {
             position: relative;
             min-height: 100%;
             min-width: 100%;
+            transition: transform linear;
         }
-        @keyframes pCrea_slideshow_zoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-        #ppm_slideshow img {
+        #ppm_slideshow_img {
             position: absolute;
-            transform: scale(1);
+            height: 100%;
             max-height: 100%;
             min-height: 100%;
-            height: 100%;
-            transition: linear, opacity cubic-bezier(0.5, 0, 0, 1);
+            transition: linear, opacity cubic-bezier(0.5, 0, 0, 0.9);
             user-select: none;
         }
 
@@ -244,7 +240,7 @@
                 </div>
             </div>
             <div id="ppm_slideshow">
-                <div>
+                <div id="ppm_slideshow_div">
                     <img id="ppm_slideshow_img" src="">
                 </div>
                 <div id="slideshow_dark"></div>
@@ -276,17 +272,22 @@
 
         // PART_CREA : SLIDESHOW
         var imgSlide = document.querySelector("#ppm_slideshow_img");
+        var divSlide = document.querySelector("#ppm_slideshow_div");
         imgS = new Array("src/home_slideshow/0.jpg","src/home_slideshow/1.jpg","src/home_slideshow/2.jpg","src/home_slideshow/3.jpg");
-        var slide_duration = 15000;
+        var slide_duration = 6000;
         var slide_tr = 2500;
         var i = 0;
 
-        imgSlide.style.animation = "pCrea_slideshow_zoom "+ slide_duration + "ms" +" linear infinite";
         imgSlide.style.transitionDuration = slide_tr + "ms";
 
         function pCreaSlideshow() {
             imgSlide.src = imgS[i];
             setTimeout(function () {
+                divSlide.style.transform = "scale(1.1)";
+                divSlide.style.transitionDuration = slide_duration + "ms";
+            }, 100);
+            setTimeout(function () {
+                imgSlide.style.transitionDuration = slide_tr + "ms";
                 imgSlide.style.opacity = "1";
             }, 1);
 
@@ -296,9 +297,17 @@
             setTimeout(function () {
                 imgSlide.style.opacity = "0";
             }, (slide_duration - slide_tr - 50));
+
+            setTimeout(function () {
+                divSlide.style.transform = "scale(1)";
+                divSlide.style.transitionDuration = "0ms";
+            }, slide_duration);
         };
         window.onload = pCreaSlideshow();
         window.onload = window.setInterval(pCreaSlideshow, slide_duration);
+
+
+// TODO : faire des slides vers droite pr transitions
 
     </script>
 </body>
