@@ -12,6 +12,10 @@ content : 10
     --accent-fruit-active-l: #ff769d;
     --accent-mesocarp: #f8edc3;
     --accent-mesocarp-active: #FFDD84;
+
+    --txt-prim: rgb(15,15,15);
+    --txt-sec: rgb(75,75,75);
+
     --bg: #f6eeef;
     --bg-active: #fbf8f9;
     --nav-bg: #221c1e;
@@ -313,11 +317,11 @@ nav:hover #navtop_ppm {
 /*/ CONTENT /*/
 @keyframes content_spawn {
     0% { opacity: 0; }
-    10% { opacity: 0; }
+    15% { opacity: 0; }
     100% { opacity: 1; }
 }
 #content > div {
-    animation: content_spawn 1.5s cubic-bezier(0.35, 0.1, 0, 1);
+    animation: content_spawn 1.5s cubic-bezier(0.2, 0.3, 0, 1);
     overflow: hidden;
 }
 
@@ -362,7 +366,7 @@ nav:hover #navtop_ppm {
 }
 .btn1_tr a:active > div {
     transform: scale(1);
-    transition: transform 0.2s cubic-bezier(0, 0.7, 0, 1);
+    transition: transform 0.175s cubic-bezier(0, 0.75, 0, 1) !important;
 }
 
 

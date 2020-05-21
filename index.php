@@ -7,7 +7,6 @@
     
     <?php include $path.'includes/head.php'; ?>
     <style type="text/css">
-
         #part_welcome, #part_crea, #part_command, #part_footer {
             position: absolute;
             width: var(--content_w);
@@ -18,11 +17,11 @@
         }
         #part_crea {
             top: 100%;
-            background-color: #e8d7f6;
+            overflow: initial !important;
         }
         #part_command {
             top: 200%;
-            background-color: #d6f3da;
+            background-color: #d6dbf3;
         }
         #part_footer{
             z-index: 80;
@@ -38,14 +37,16 @@
             top: 30%;
             left: 10%;
         }
-        #PPM-title {
+        #PPM_title {
             font-size: 70px;
             font-weight: 600;
+            color: var(--txt-prim);
         }
         #welcome_txt {
             margin-top: 8px;
             margin-left: 3px;
             font-size: 35px;
+            color: var(--txt-prim);
         }
 
 
@@ -53,9 +54,9 @@
         .bigfruit {
             z-index: 11;
             position: absolute;
-            top: 10%;
-            left: 30%;
-            width: var(--content_w);
+            top: -90%;
+            left: 15%;
+            width: 100%;
             min-width: 1050px;
             min-height: 1185px;
             height: 165%;
@@ -104,6 +105,43 @@
         }
         #crea_btn a:active {
             color: var(--bg);
+        }
+
+        /* SLIDESHOW */
+        #ppm_slideshow {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #ppm_slideshow > div:nth-child(1) {
+            position: relative;
+            min-height: 100%;
+            min-width: 100%;
+        }
+        @keyframes pCrea_slideshow_zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        #ppm_slideshow img {
+            position: absolute;
+            transform: scale(1);
+            max-height: 100%;
+            min-height: 100%;
+            height: 100%;
+            transition: linear, opacity cubic-bezier(0.5, 0, 0, 1);
+            user-select: none;
+        }
+
+        #slideshow_dark {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-color: var(--accent-fruit);
         }
 
 
@@ -158,7 +196,6 @@
         }
         .foot_link:active > div {
             transform: scale(0.9) !important;
-            transition: transform 0.2s cubic-bezier(0, 0.75, 0, 1) !important;
         }
 
         .foot_link > div {
@@ -177,8 +214,6 @@
             fill: var(--bg);
         }
 
-
-
     </style>
 </head>
 <body>
@@ -187,28 +222,33 @@
 
     <!-- CONTENT -->
     <div id="content">
-        <div class="bigfruit">
-            <div id="crea">
-                <div class="crea_el" id="crea_txt">
-                    Entrons directement<br>dans le vif du sujet!
-                </div>
-                <div class="crea_el btn1_tr" id="crea_btn">
-                    <a href="projects/">
-                        <div>
-                            NOS CRÉATIONS
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
         <div id="part_welcome">
             <div id="first_text">
-                <div id="PPM-title">Pamplemousse</div>
+                <div id="PPM_title">Pamplemousse</div>
                 <div id="welcome_txt">Bienvenue!</div>
             </div>
         </div>
         <div id="part_crea">
-            <!-- see .bigfruit -->
+            <div class="bigfruit">
+                <div id="crea">
+                    <div class="crea_el" id="crea_txt">
+                        Entrons directement<br>dans le vif du sujet!
+                    </div>
+                    <div class="crea_el btn1_tr" id="crea_btn">
+                        <a href="projects/">
+                            <div>
+                                NOS CRÉATIONS
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="ppm_slideshow">
+                <div>
+                    <img id="ppm_slideshow_img" src="">
+                </div>
+                <div id="slideshow_dark"></div>
+            </div>
         </div>
         <div id="part_command">
             
@@ -228,9 +268,38 @@
                 </div>
             </div>
         </div>
-    </>
+    </div>
 
 
     <script type="text/javascript" src="ppmscript.js"></script>
+    <script type="text/javascript">
+
+        // PART_CREA : SLIDESHOW
+        var imgSlide = document.querySelector("#ppm_slideshow_img");
+        imgS = new Array("src/home_slideshow/0.jpg","src/home_slideshow/1.jpg","src/home_slideshow/2.jpg","src/home_slideshow/3.jpg");
+        var slide_duration = 15000;
+        var slide_tr = 2500;
+        var i = 0;
+
+        imgSlide.style.animation = "pCrea_slideshow_zoom "+ slide_duration + "ms" +" linear infinite";
+        imgSlide.style.transitionDuration = slide_tr + "ms";
+
+        function pCreaSlideshow() {
+            imgSlide.src = imgS[i];
+            setTimeout(function () {
+                imgSlide.style.opacity = "1";
+            }, 1);
+
+            i++;
+            if(i > (imgS.length-1)){ i = 0; }
+
+            setTimeout(function () {
+                imgSlide.style.opacity = "0";
+            }, (slide_duration - slide_tr - 50));
+        };
+        window.onload = pCreaSlideshow();
+        window.onload = window.setInterval(pCreaSlideshow, slide_duration);
+
+    </script>
 </body>
 </html>
