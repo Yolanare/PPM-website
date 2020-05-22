@@ -21,7 +21,6 @@
         }
         #part_command {
             top: 200%;
-            background-color: #d6dbf3;
         }
         #part_footer{
             z-index: 80;
@@ -55,11 +54,11 @@
             z-index: 11;
             position: absolute;
             top: -90%;
-            left: 15%;
-            width: 100%;
+            left: 21.5%;
+            width: 85%;
             min-width: 1050px;
             min-height: 1185px;
-            height: 165%;
+            height: 172.5%;
             background: url(src/PPM/bigfruit.svg);
             background-repeat: no-repeat;
             background-size: auto;
@@ -73,8 +72,8 @@
         .crea_el {
             z-index: 15;
             position: relative;
-            right: 16%;
-            top: 67.5%;
+            right: 17.5%;
+            top: 68.5%;
         }
 
         #crea_txt {
@@ -108,28 +107,49 @@
         }
 
         /* SLIDESHOW */
+        @keyframes slide_img_in {
+            0% { opacity: 0; transform: translateX(0%); }
+            70% { transform: translateX(-7.5%); }
+            100% { opacity: 1; transform: translateX(-7.5%); }
+        }
+        @keyframes slide_img_out {
+            0% { opacity: 1; transform: translateX(-7.5%); }
+            70% { transform: translateX(-15%); }
+            100% { opacity: 0; transform: translateX(-15%); }
+        }
+        @keyframes slide_img_zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
         #ppm_slideshow {
             position: absolute;
-            height: 100%;
             width: 100%;
+            height: 100%;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        #ppm_slideshow_div {
+        #ppm_slideshow_container {
             position: relative;
-            min-height: 100%;
-            min-width: 100%;
+            min-width: 110%;
+            min-height: 110%;
             transition: transform linear;
         }
-        #ppm_slideshow_img {
+        #ppm_slideshow_container > div {
             position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: slide_img_zoom var(--slide_img_duration) linear forwards;
+        }
+        #ppm_slideshow_container img {
+            position: relative;
             height: 100%;
             max-height: 100%;
             min-height: 100%;
-            transition: linear, opacity cubic-bezier(0.5, 0, 0, 0.9);
             user-select: none;
+            animation: slide_img_in var(--slide_img_tr) cubic-bezier(0.5, 0, 0, 0.9) forwards;
         }
 
         #slideshow_dark {
@@ -240,8 +260,7 @@
                 </div>
             </div>
             <div id="ppm_slideshow">
-                <div id="ppm_slideshow_div">
-                    <img id="ppm_slideshow_img" src="">
+                <div id="ppm_slideshow_container">
                 </div>
                 <div id="slideshow_dark"></div>
             </div>
@@ -271,43 +290,41 @@
     <script type="text/javascript">
 
         // PART_CREA : SLIDESHOW
-        var imgSlide = document.querySelector("#ppm_slideshow_img");
-        var divSlide = document.querySelector("#ppm_slideshow_div");
         imgS = new Array("src/home_slideshow/0.jpg","src/home_slideshow/1.jpg","src/home_slideshow/2.jpg","src/home_slideshow/3.jpg");
-        var slide_duration = 6000;
-        var slide_tr = 2500;
-        var i = 0;
+        var containerSlide = document.querySelector("#ppm_slideshow_container"); // zoom
+        var slide_duration = 10000;
+        var slide_tr = 2000;
+        var i = -1;
 
-        imgSlide.style.transitionDuration = slide_tr + "ms";
+        document.documentElement.style.setProperty('--slide_img_duration', slide_duration + "ms");
+        document.documentElement.style.setProperty('--slide_img_tr', slide_tr + "ms");
 
         function pCreaSlideshow() {
-            imgSlide.src = imgS[i];
+            var divSlide1 = containerSlide.firstChild;
+            var imgSlide1 = divSlide1.firstChild;
+
             setTimeout(function () {
-                divSlide.style.transform = "scale(1.1)";
-                divSlide.style.transitionDuration = slide_duration + "ms";
-            }, 100);
+                imgSlide1.style.animationName = "slide_img_out";
+            }, 0);
             setTimeout(function () {
-                imgSlide.style.transitionDuration = slide_tr + "ms";
-                imgSlide.style.opacity = "1";
-            }, 1);
+                containerSlide.removeChild(containerSlide.firstChild);
+            }, (slide_tr + 50));
 
             i++;
-            if(i > (imgS.length-1)){ i = 0; }
+            if(i > (imgS.length-1)) { i = 0; }
 
-            setTimeout(function () {
-                imgSlide.style.opacity = "0";
-            }, (slide_duration - slide_tr - 50));
+            var divSlide2 = document.createElement("div");
+            var imgSlide2 = document.createElement("img");
+            imgSlide2.src = imgS[i];
+            divSlide2.appendChild(imgSlide2);
+            containerSlide.appendChild(divSlide2);
 
-            setTimeout(function () {
-                divSlide.style.transform = "scale(1)";
-                divSlide.style.transitionDuration = "0ms";
-            }, slide_duration);
         };
         window.onload = pCreaSlideshow();
         window.onload = window.setInterval(pCreaSlideshow, slide_duration);
 
 
-// TODO : faire des slides vers droite pr transitions
+// TODO : retirer erreur: qd lancement page ya imgSlide1 qui est pas encore créé? (null)
 
     </script>
 </body>
