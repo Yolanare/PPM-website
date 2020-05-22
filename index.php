@@ -308,7 +308,7 @@
             }, 0);
             setTimeout(function () {
                 containerSlide.removeChild(containerSlide.firstChild);
-            }, (slide_tr + 50));
+            }, slide_tr);
 
             i++;
             if(i > (imgS.length-1)) { i = 0; }
