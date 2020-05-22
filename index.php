@@ -108,14 +108,14 @@
 
         /* SLIDESHOW */
         @keyframes slide_img_in {
-            0% { opacity: 0; transform: translateX(0%); }
-            70% { transform: translateX(-7.5%); }
-            100% { opacity: 1; transform: translateX(-7.5%); }
+            0% { opacity: 0; transform: translateX(7.5%); }
+            70% { transform: translateX(0%); }
+            100% { opacity: 1; transform: translateX(0%); }
         }
         @keyframes slide_img_out {
-            0% { opacity: 1; transform: translateX(-7.5%); }
-            70% { transform: translateX(-15%); }
-            100% { opacity: 0; transform: translateX(-15%); }
+            0% { opacity: 1; transform: translateX(0%); }
+            70% { transform: translateX(-7.5%); }
+            100% { opacity: 0; transform: translateX(-7.5%); }
         }
         @keyframes slide_img_zoom {
             0% { transform: scale(1); }
@@ -143,13 +143,13 @@
             height: 100%;
             animation: slide_img_zoom var(--slide_img_duration) linear forwards;
         }
-        #ppm_slideshow_container img {
+        #ppm_slideshow_container > div > div {
             position: relative;
             height: 100%;
-            max-height: 100%;
-            min-height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: slide_img_in var(--slide_img_tr) cubic-bezier(0.5, 0, 0, 1) forwards;
             user-select: none;
-            animation: slide_img_in var(--slide_img_tr) cubic-bezier(0.5, 0, 0, 0.9) forwards;
         }
 
         #slideshow_dark {
@@ -314,8 +314,8 @@
             if(i > (imgS.length-1)) { i = 0; }
 
             var divSlide2 = document.createElement("div");
-            var imgSlide2 = document.createElement("img");
-            imgSlide2.src = imgS[i];
+            var imgSlide2 = document.createElement("div");
+            imgSlide2.style.backgroundImage = "url(" + imgS[i] + ")";
             divSlide2.appendChild(imgSlide2);
             containerSlide.appendChild(divSlide2);
 
