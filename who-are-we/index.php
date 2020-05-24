@@ -5,7 +5,7 @@
 <head>
     <title>Nos Membres - Pamplemousse</title>
     
-    <?php include  $path.'includes/head.php'; ?>
+    <?php include $path.'includes/head.php'; ?>
     <style type="text/css">
         :root {
             --mbre_fiches_size: 220px;
@@ -420,14 +420,14 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <?php include  $path.'includes/nav.php'; ?>
+    <?php include $path.'includes/nav.php'; ?>
     
     <!-- CONTENT -->
     <div id="content">
         <div id="fiches">
             <div class="fiches_membres">
                 <div id="fm_all">
-                    <?php include  $path.'includes/fiches_membres.php'; ?>
+                    <?php include $path.'includes/fiches_membres.php'; ?>
                 </div>
             </div>
             <div id="mbre_poem">
