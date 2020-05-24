@@ -19,7 +19,7 @@
 
     </div>
 
-
     <script type="text/javascript" src="../ppmscript.js"></script>
+    <script type="text/javascript"></script>
 </body>
 </html>

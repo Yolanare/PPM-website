@@ -72,8 +72,8 @@
         .crea_el {
             z-index: 15;
             position: relative;
-            right: 17.5%;
-            top: 68.5%;
+            right: 18%;
+            top: 69%;
         }
 
         #crea_txt {
@@ -285,10 +285,8 @@
         </div>
     </div>
 
-
-    <script type="text/javascript" src="ppmscript.js"></script>
+    <script type="text/javascript" src="../ppmscript.js"></script>
     <script type="text/javascript">
-
         // PART_CREA : SLIDESHOW
         imgS = new Array("src/home_slideshow/0.jpg","src/home_slideshow/1.jpg","src/home_slideshow/2.jpg","src/home_slideshow/3.jpg");
         var containerSlide = document.querySelector("#ppm_slideshow_container"); // zoom
@@ -322,9 +320,7 @@
         };
         window.onload = pCreaSlideshow();
         window.onload = window.setInterval(pCreaSlideshow, slide_duration);
-
-
-// TODO : retirer erreur: qd lancement page ya imgSlide1 qui est pas encore créé? (null)
+        // TODO : retirer erreur: qd lancement page ya imgSlide1 qui est pas encore créé? (null)
 
     </script>
 </body>

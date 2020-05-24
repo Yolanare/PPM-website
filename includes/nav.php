@@ -2,8 +2,8 @@
     <div id="mobile_nav_dark_bg" onclick="nav_show()"></div>
     <nav>
         <div id="navtop_ppm">
-            <a onclick="nav_focus()" href="<?php if($page!="home"){echo "../";} ?>"></a>
-            <img src="<?php if($page!="home"){echo "../";} ?>src/PPM/ppm300.png" />
+            <a onclick="nav_focus()" href="<?php if($page!="home"){echo"../";} ?>"></a>
+            <img src="<?php if($page!="home"){echo"../";} ?>src/PPM/ppm300.png" />
         </div>
         <div id="menu">
             <div class="menu_btn">
@@ -14,7 +14,7 @@
         </div>
         <div id="mobile_open_close_btn" onclick="nav_show()" roulemapoule="0"></div>
         <div id="navlarge_ppm">
-            <img src="<?php if($page!="home"){echo "../";} ?>src/PPM/ppmnavlarge.png" />
+            <img src="<?php if($page!="home"){echo"../";} ?>src/PPM/ppmnavlarge.png" />
         </div>
         <div id="nav_copyright">
             © Copyright BesTTeamEver (temporary name) • <?php echo date("Y"); ?>
